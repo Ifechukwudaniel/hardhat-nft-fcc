@@ -1,0 +1,27 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add --dev hardhat
+
+PATH: 
+  /usr/local/Cellar/pyenv-virtualenv/1.1.5/shims:/Users/emmanuelpepple/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/Users/emmanuelpepple/.pyenv/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/Cellar/pyenv-virtualenv/1.1.5/shims:/Users/emmanuelpepple/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/Users/emmanuelpepple/.pyenv/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/emmanuelpepple/.cargo/bin:/Applications/Postgres.app/Contents/Versions/14/bin/psql:/Users/emmanuelpepple/Library/Android/sdk/emulator:/Users/emmanuelpepple/Library/Android/sdk/tools:/Users/emmanuelpepple/Library/Android/sdk/tools/bin:/Users/emmanuelpepple/Library/Android/sdk/platform-tools:/Users/emmanuelpepple/Library/flutter/bin:/usr/local/apache/apache-maven/bin:/Users/emmanuelpepple/.fzf/bin:/Applications/Postgres.app/Contents/Versions/14/bin/psql:/Users/emmanuelpepple/Library/Android/sdk/emulator:/Users/emmanuelpepple/Library/Android/sdk/tools:/Users/emmanuelpepple/Library/Android/sdk/tools/bin:/Users/emmanuelpepple/Library/Android/sdk/platform-tools:/Users/emmanuelpepple/Library/flutter/bin:/usr/local/apache/apache-maven/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.20.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
