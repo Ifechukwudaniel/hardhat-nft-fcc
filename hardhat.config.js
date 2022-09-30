@@ -4,16 +4,17 @@ require("@nomiclabs/hardhat-etherscan");
 require("dotenv").config();
 require("solidity-coverage");
 require("hardhat-deploy");
-/** @type import('hardhat/config').HardhatUserConfig */
-const MAINNET_RPC_URL =
-  process.env.MAINNET_RPC_URL || process.env.ALCHEMY_MAINNET_RPC_URL || "";
+// You need to export an object to set up your config
+// Go to https://hardhat.org/config/ to learn more
+/**
+ * @type import('hardhat/config').HardhatUserConfig
+ */
+
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "";
 const GOERLI_RPC_URL =
   process.env.GOERLI_RPC_URL ||
   "https://eth-goerli.alchemyapi.io/v2/your-api-key";
-const PRIVATE_KEY =
-  process.env.PRIVATE_KEY ||
-  "200b77faf4fa99ab816ef0350471a17e9a5df59d5c91390339639b60c0821236";
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 
 module.exports = {
@@ -21,12 +22,7 @@ module.exports = {
   networks: {
     hardhat: {
       chainId: 31337,
-      forking: {
-        url: MAINNET_RPC_URL,
-      },
-    },
-    localhost: {
-      chainId: 31337,
+      // gasPrice: 130000000000,
     },
     goerli: {
       url: GOERLI_RPC_URL,
@@ -34,14 +30,21 @@ module.exports = {
       chainId: 5,
       blockConfirmations: 6,
     },
+    mainnet: {
+      url: process.env.MAINNET_RPC_URL,
+      accounts: [PRIVATE_KEY],
+      chainId: 1,
+      blockConfirmations: 6,
+    },
   },
   solidity: {
     compilers: [
-      { version: "0.8.7" },
-      { version: "0.6.12" },
-      { version: "0.6.6" },
-      { version: "0.6.0" },
-      { version: "0.4.19" },
+      {
+        version: "0.8.8",
+      },
+      {
+        version: "0.6.6",
+      },
     ],
   },
   etherscan: {
@@ -59,5 +62,8 @@ module.exports = {
       default: 0, // here this will by default take the first account as deployer
       1: 0, // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
     },
+  },
+  mocha: {
+    timeout: 200000, // 200 seconds max for running tests
   },
 };
